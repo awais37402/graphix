@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import Hero from './components/Hero';
+import PortfolioSection from './components/PortfolioSection';
 import './App.css';
 
 function App() {
+  const [activeTab, setActiveTab] = useState('thumbnails');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="portfolio-app">
+      <Hero />
+      <PortfolioSection 
+        activeTab={activeTab} 
+        setActiveTab={setActiveTab} 
+      />
     </div>
   );
 }
